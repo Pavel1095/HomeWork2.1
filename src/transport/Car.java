@@ -2,6 +2,11 @@ package transport;
 
 
 public class Car {
+
+     private class Key{
+
+     }
+
      String brand;
      String model;
      double engineVolume;
@@ -15,9 +20,14 @@ public class Car {
      String tires;
      int currentMonth;
 
+     public String toString() {
+          return "Марка: " + getBrand() + "\nСтрана производитель: " + getProductionCountry() + "\nГод выпуска: " + getProductionYear() + "\nМодель: " + getModel() +
+                  "\nТип кузова: " + getBodyType() + "\nЦвет: " + getColor() + "\nТрансмиссия: " + getTransmissionType() + "\nМотор: " + getEngineVolume()  +
+                  "\nМест: " + getSeats() + "\nШины: " + getTires() + "\n" + "\n ";
+     }
 
      public Car(String brand, String model, double engineVolume, String color, int productionYear,
-                String productionCountry, String transmissionType, String bodyType, String licencePlate, int seats, int currentMonth) {
+                String productionCountry, String transmissionType, String bodyType, String licencePlate, int seats) {
           this.brand = brand;
           this.model = model;
           this.engineVolume = engineVolume;
@@ -31,12 +41,6 @@ public class Car {
           this.currentMonth = currentMonth;
      }
 
-     public String toString() {
-          return "Марка: " + getBrand() + "\nСтрана производитель: " + getProductionCountry() + "\nГод выпуска: " + getProductionYear() + "\nМодель: " + getModel() +
-                  "\nТип кузова: " + getBodyType() + "\nЦвет: " + getColor() + "\nТрансмиссия: " + getTransmissionType() + "\nМотор: " + getEngineVolume()  +
-                  "\nМест: " + getSeats() + "\nШины: " + getTires() + "\n" + "\n ";
-     }
-
      public String getTires() {
           if (isTiresWinter() == true) {
                this.tires = "зимние";
@@ -47,8 +51,8 @@ public class Car {
           return tires;
      }
 
-
      public boolean isTiresWinter() {
+          int currentMonth = 5;
           if ( currentMonth == 1){
                return true;
           } else if (currentMonth == 2){
@@ -61,7 +65,6 @@ public class Car {
                return false;
      }
 
-
      public final String getBrand() {
           if (brand == null || brand.isEmpty()){
                this.brand = "Default";
@@ -70,6 +73,9 @@ public class Car {
      }
 
      public final String getModel() {
+          if (model == null || model.isEmpty()){
+               this.model = "Default";
+          }
           return model;
      }
 
@@ -95,18 +101,30 @@ public class Car {
      }
 
      public final String getProductionCountry() {
+          if (productionCountry == null || productionCountry.isEmpty()){
+               this.productionCountry = "Default";
+          }
           return productionCountry;
      }
 
      public String getTransmissionType() {
+          if (transmissionType == null || transmissionType.isEmpty()){
+               this.transmissionType = "Default";
+          }
           return transmissionType;
      }
 
      public final String getBodyType() {
+          if (bodyType == null || bodyType.isEmpty()){
+               this.bodyType = "Default";
+          }
           return bodyType;
      }
 
      public final int getSeats() {
+          if (seats <= 0){
+               this.seats = 4;
+          }
           return seats;
      }
 }
