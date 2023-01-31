@@ -2,17 +2,17 @@ package transport;
 
 
 public class Car {
-     final String brand;
-     final String model;
+     String brand;
+     String model;
      double engineVolume;
      String color;
-     final int productionYear;
-     final String productionCountry;
+     int productionYear;
+     String productionCountry;
      String transmissionType;
-     final String bodyType;
+     String bodyType;
      String licencePlate;
-     final int seats;
-     boolean tires;
+     int seats;
+     String tires;
      int currentMonth;
 
 
@@ -34,17 +34,17 @@ public class Car {
      public String toString() {
           return "Марка: " + getBrand() + "\nСтрана производитель: " + getProductionCountry() + "\nГод выпуска: " + getProductionYear() + "\nМодель: " + getModel() +
                   "\nТип кузова: " + getBodyType() + "\nЦвет: " + getColor() + "\nТрансмиссия: " + getTransmissionType() + "\nМотор: " + getEngineVolume()  +
-                  "\nМест: " + getSeats() + "\nШины: " + getTires();
+                  "\nМест: " + getSeats() + "\nШины: " + getTires() + "\n" + "\n ";
      }
 
-     public boolean getTires() {
+     public String getTires() {
           if (isTiresWinter() == true) {
-               System.out.println("Шины: зимние");;
+               this.tires = "зимние";
           }else if
                (isTiresWinter() == false){
-          System.out.println("Шины: летние");
+               this.tires = "летние";
           }
-          return this.tires;
+          return tires;
      }
 
 
@@ -62,27 +62,39 @@ public class Car {
      }
 
 
-     public String getBrand() {
-          return brand;
+     public final String getBrand() {
+          if (brand == null || brand.isEmpty()){
+               this.brand = "Default";
+          }
+               return brand;
      }
 
-     public String getModel() {
+     public final String getModel() {
           return model;
      }
 
      public double getEngineVolume() {
+          if (engineVolume <= 0){
+               this.engineVolume = 1.5;
+          }
           return engineVolume;
      }
 
      public String getColor() {
+          if (color == null || color.isEmpty()){
+               this.color = "Белый";
+          }
           return color;
      }
 
-     public int getProductionYear() {
+     public final int getProductionYear() {
+          if (productionYear <= 0){
+               this.productionYear = 2000;
+          }
           return productionYear;
      }
 
-     public String getProductionCountry() {
+     public final String getProductionCountry() {
           return productionCountry;
      }
 
@@ -90,11 +102,11 @@ public class Car {
           return transmissionType;
      }
 
-     public String getBodyType() {
+     public final String getBodyType() {
           return bodyType;
      }
 
-     public int getSeats() {
+     public final int getSeats() {
           return seats;
      }
 }
