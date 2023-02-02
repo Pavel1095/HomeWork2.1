@@ -1,18 +1,28 @@
 package transport;
 
 
-public class Car {
+public class Car extends Transport {
 
      private class Key{
+          private boolean remoteEngControl;
+          private boolean keylessAccess;
 
+          public boolean isRemoteEngControl() {
+               return remoteEngControl;
+          }
+
+          public boolean isKeylessAccess() {
+               return keylessAccess;
+          }
+
+          private Key(boolean remoteEngControl, boolean keylessAccess) {
+               this.remoteEngControl = remoteEngControl;
+               this.keylessAccess = keylessAccess;
+          }
      }
 
-     String brand;
-     String model;
      double engineVolume;
      String color;
-     int productionYear;
-     String productionCountry;
      String transmissionType;
      String bodyType;
      String licencePlate;
@@ -28,17 +38,16 @@ public class Car {
 
      public Car(String brand, String model, double engineVolume, String color, int productionYear,
                 String productionCountry, String transmissionType, String bodyType, String licencePlate, int seats) {
-          this.brand = brand;
-          this.model = model;
+          super(brand,
+                  model,
+                  productionYear,
+                  productionCountry,
+                  color);
           this.engineVolume = engineVolume;
-          this.color = color;
-          this.productionYear = productionYear;
-          this.productionCountry = productionCountry;
           this.transmissionType = transmissionType;
           this.bodyType = bodyType;
           this.licencePlate = licencePlate;
           this.seats = seats;
-          this.currentMonth = currentMonth;
      }
 
      public String getTires() {
@@ -52,7 +61,7 @@ public class Car {
      }
 
      public boolean isTiresWinter() {
-          int currentMonth = 5;
+          int currentMonth = 2;
           if ( currentMonth == 1){
                return true;
           } else if (currentMonth == 2){
@@ -65,19 +74,6 @@ public class Car {
                return false;
      }
 
-     public final String getBrand() {
-          if (brand == null || brand.isEmpty()){
-               this.brand = "Default";
-          }
-               return brand;
-     }
-
-     public final String getModel() {
-          if (model == null || model.isEmpty()){
-               this.model = "Default";
-          }
-          return model;
-     }
 
      public double getEngineVolume() {
           if (engineVolume <= 0){
@@ -91,20 +87,6 @@ public class Car {
                this.color = "Белый";
           }
           return color;
-     }
-
-     public final int getProductionYear() {
-          if (productionYear <= 0){
-               this.productionYear = 2000;
-          }
-          return productionYear;
-     }
-
-     public final String getProductionCountry() {
-          if (productionCountry == null || productionCountry.isEmpty()){
-               this.productionCountry = "Default";
-          }
-          return productionCountry;
      }
 
      public String getTransmissionType() {

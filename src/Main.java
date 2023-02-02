@@ -1,3 +1,4 @@
+import transport.Bus;
 import transport.Car;
 
 public class Main {
@@ -17,10 +18,20 @@ public class Main {
         Car hyundai = new Car("Hyundai", "Avante", 1.6, "Оранжевый",
                 2016, "Южная Корея", "АКПП", "Купе", "005", 2);
 
+        Bus liaz = new Bus("ЛиАЗ", "677", 1975, "СССР", "Желтый");
+
+        Bus ikarus = new Bus("Ikarus", "Ikarus 55", 1955, "Венгрия", "Красный");
+
+        Bus zil = new Bus("ЗиЛ", "ЗИЛ-118 Юность", 1965, "СССР", "Бело-голубой");
+
         System.out.println(lada);
         System.out.println(audi);
         System.out.println(bmw);
         System.out.println(kia);
         System.out.println(hyundai);
+
+        System.out.println(liaz);
+        System.out.println(ikarus);
+        System.out.println(zil);
     }
 }
