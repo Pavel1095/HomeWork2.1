@@ -21,20 +21,20 @@ public class Main {
         Truck gaz = new Truck ("ГАЗ", "66", 4.3);
 
 
-        System.out.println(lada);
-        System.out.println(audi);
-        System.out.println(bmw);
-        System.out.println(kia);
-
-        System.out.println(ikarus);
-        System.out.println(liaz);
-        System.out.println(zil_118);
-        System.out.println(paz);
-
-        System.out.println(zil_130);
-        System.out.println(maz);
-        System.out.println(ural);
-        System.out.println(gaz);
+//        System.out.println(lada);
+//        System.out.println(audi);
+//        System.out.println(bmw);
+//        System.out.println(kia);
+//
+//        System.out.println(ikarus);
+//        System.out.println(liaz);
+//        System.out.println(zil_118);
+//        System.out.println(paz);
+//
+//        System.out.println(zil_130);
+//        System.out.println(maz);
+//        System.out.println(ural);
+//        System.out.println(gaz);
     }
 
 }

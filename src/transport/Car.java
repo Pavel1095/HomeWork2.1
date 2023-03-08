@@ -1,7 +1,7 @@
 package transport;
 
 
-public class Car extends Transport {
+public class Car extends Transport implements Competing {
 
 //     private class Key{
 //          private boolean remoteEngControl;
@@ -40,6 +40,22 @@ public class Car extends Transport {
           super(brand, model, engineVolume);
 //          this.engineVolume = engineVolume;
      }
+
+     @Override
+     public void pit_stop() {
+
+     }
+
+     @Override
+     public void maxSpeed() {
+
+     }
+
+     @Override
+     public void lapBestTime() {
+
+     }
+
 
 //     public String getTires() {
 //          if (isTiresWinter() == true) {

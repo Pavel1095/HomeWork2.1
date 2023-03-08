@@ -16,7 +16,7 @@ public class Transport {
 
     }
 
-    public static void Finish() {
+    public static void Stop() {
 
     }
 
@@ -28,6 +28,11 @@ public class Transport {
 //        this.productionCountry = productionCountry;
 //        this.color = color;
 //        this.maxSpeed = maxSpeed;
+    }
+
+    @Override
+    public String toString() {
+        return "\nМарка: " + brand + "\nМодель: " + model + "\nОбъем двигателя л.: " + engineVolume;
     }
 
 //    @Override
